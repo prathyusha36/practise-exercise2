@@ -8,29 +8,24 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class IntegerFactorialTest {
-    IntegerFactorial f1;
+    IntegerFactorial object;
     @Before
-    public void setUp()  {
-        f1 = new IntegerFactorial();
+    public void setUp() throws Exception {
+        object=new IntegerFactorial();
     }
 
     @After
     public void tearDown() throws Exception {
-        f1 = null;
+        object=null;
     }
-
     @Test
-    public void getFactorial1Success() {
-        String actualStr = f1.getFactorial(2);
-        String expectedStr = "The factorial of 1 is 1\n" + "The factorial of 2 is 2";
-        assertEquals(expectedStr,actualStr);
+    public void longFactorialCheck() {
+        String res=object.longFactorial();
+        assertEquals("1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n",res);
     }
-
     @Test
-    public void getFactorial2Success() {
-        String actualStr = f1.getFactorial(4);
-        String expectedStr = "The factorial of 1 is 1\n" + "The factorial of 2 is 2\n" + "The factorial of 3 is 6\n" + "The factorial of 4 is 24";
-        assertEquals(actualStr,expectedStr);
+    public void intFactorialCheck() {
+        String res=object.intFactorial();
+        assertEquals("1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n",res);
     }
-
 }

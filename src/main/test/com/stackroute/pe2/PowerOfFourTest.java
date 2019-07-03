@@ -26,6 +26,11 @@ public class PowerOfFourTest {
         assertEquals("is a power of 4",result);
     }
     @Test
+    public void givenNegativeNumberShouldRaiseError() {
+        String result=number.checkWhetherNumberIsPowerOfFour(-4);
+        assertEquals("error",result);
+    }
+    @Test
     public void checkWhetherNumberIsNotPowerOfFour() {
         String result=number.checkWhetherNumberIsPowerOfFour(345);
         assertEquals("not a power of 4",result);

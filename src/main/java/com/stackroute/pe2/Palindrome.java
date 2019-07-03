@@ -1,7 +1,9 @@
 package main.java.com.stackroute.pe2;
 
 import java.util.Scanner;
-
+/*
+check given string is palindrome or not
+ */
 public class Palindrome {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
@@ -16,7 +18,8 @@ public class Palindrome {
 
       for (int i = length - 1; i >= 0; i--)
           reverse = reverse + original.charAt(i);
-
+      if(original.equals(" "))
+         return "error";
       if (original.equals(reverse))
             return "is a palindrome";
       else

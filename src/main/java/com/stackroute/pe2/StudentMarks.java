@@ -1,7 +1,10 @@
 package main.java.com.stackroute.pe2;
 
 import java.util.Scanner;
-
+/*
+ reads number of students and n grades as input (of int between 0 and 100, inclusive)
+ and displays the average, minimum and maximum
+ */
 public class StudentMarks {
 
         public int studentMin(int number,int studentArray[])

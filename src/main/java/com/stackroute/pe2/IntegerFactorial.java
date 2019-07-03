@@ -1,29 +1,60 @@
 package main.java.com.stackroute.pe2;
 
-public class IntegerFactorial {
-    public String getFactorial(int number )
-{
-    int factorial;
-    String replaceString;
-    String factorialString;
-    factorialString="";
-    replaceString="";
+import java.math.BigDecimal;
 
-    //This loop will compute the factorial
-    for( int i=1;i<=number ; i++ )
-    {
-        factorial =1;
-        for( int j=1 ; j<=i ;j++ )
-        {
-            factorial= factorial*j;
+public class IntegerFactorial {
+    BigDecimal ob = new BigDecimal("234567890000000987654321234567");
+    BigDecimal ob2 = new BigDecimal("123456789009876543232456");
+   /*
+   list all the factorial that can be expressed as a long (64-bit signed integer).
+    */
+    public String longFactorial() {
+        String outp = "";
+        BigDecimal ob1 = new BigDecimal(1);
+        System.out.println("List of factorials under long value is");
+        for (int i = 1; ; i++) {
+            if (ob1.compareTo(new BigDecimal(Long.MAX_VALUE)) < 0 && ob1.multiply(new BigDecimal(i + 1)).compareTo(new BigDecimal(Long.MAX_VALUE)) < 0) {
+                ob1 = ob1.multiply(new BigDecimal(i));
+                System.out.println(i);
+                outp = outp + i;
+                outp = outp + "\n";
+
+            } else {
+                break;
+            }
         }
-        replaceString=replaceString+"The factorial of "+i+" is "+Integer.toString(factorial)+ "\n";
+        return outp;
     }
-    for(int i=0;i<replaceString.length()-1 ; i++ )
-    {
-        factorialString=factorialString+replaceString.charAt(i);
+    /*
+    list all the factorials, that can be expressed as an int (i.e., 32-bit signed integer)
+
+     */
+    public String intFactorial(){
+        String outp = "";
+        BigDecimal ob1 = new BigDecimal(1);
+        BigDecimal ob2;
+        int j=1;
+        System.out.println("List of factorials under int value is");
+        for (int i = 1; ; ) {
+            if (ob1.compareTo(new BigDecimal(Integer.MAX_VALUE)) < 0&&ob1.multiply(new BigDecimal(i+1)).compareTo(new BigDecimal(Integer.MAX_VALUE))<0){
+                ob2=ob1;
+
+                ob1 = ob1.multiply(new BigDecimal(i));
+                System.out.println(i);
+                outp = outp + i;
+                outp=outp+"\n";
+
+            }
+            else{
+                break;
+            }
+            i++;
+        }
+
+        return outp;
+
+
+
     }
-    return factorialString;
-}
 
 }

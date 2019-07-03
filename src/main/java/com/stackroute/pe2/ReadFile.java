@@ -2,7 +2,9 @@ package main.java.com.stackroute.pe2;
 
 import java.io.*;
 import java.util.Scanner;
-
+/*
+ read contents of files find out its length and make it uppercase
+ */
 public class ReadFile {
 
     public static String checkReadFile(File file) {
@@ -18,6 +20,7 @@ public class ReadFile {
 
             }
             len=sentence.length();
+            System.out.println(len);
             bufferedReader.close();
         } catch (IOException e) {
             return "not found";

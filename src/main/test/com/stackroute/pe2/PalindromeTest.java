@@ -32,8 +32,13 @@ public class PalindromeTest {
         assertEquals("is a palindrome",word);
     }
     @Test
-    public void checkForNOTPalindromeForString() {
+    public void checkForNotPalindromeForString() {
         String word=object.checkForPalindrome("prathyusha");
         assertEquals("is not a palindrome",word);
+    }
+    @Test
+    public void givenEmptyStringShouldReturnError() {
+        String word=object.checkForPalindrome(" ");
+        assertEquals("error",word);
     }
 }

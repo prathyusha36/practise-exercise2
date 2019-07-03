@@ -29,4 +29,5 @@ public class EvenNumTestTest {
         boolean result=number.isEven(7);
         assertEquals(false,result);
     }
+
 }
